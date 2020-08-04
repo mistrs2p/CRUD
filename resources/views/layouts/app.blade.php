@@ -18,7 +18,8 @@
         </style>
     </head>
     <body>
-        <div class="container">
+        @include('inc.navbar')
+        <div class="container mt-5">
             @yield('content')
         </div>
     </body>

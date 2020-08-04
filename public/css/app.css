@@ -10938,6 +10938,6 @@ a.text-dark:focus {
 * {
   font-family: "IRANSansFaNum";
   direction: rtl;
-  text-align: right;
+  text-align: unset !important;
 }
 

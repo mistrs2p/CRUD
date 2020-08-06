@@ -107,7 +107,17 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        if (empty($post)) {
+            return response("Not Found!", 404);
+        }
+
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+        ]);
+
+        return view('posts.show')->with('post', $post);
     }
 
     /**

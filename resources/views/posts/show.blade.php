@@ -10,7 +10,8 @@
                 <h3>{{ $post->title }}</h3>
             </div>
             <div class="card-text">
-                {{ $post->body }}
+                {!! $post->body !!}
+                {{-- {{}} dont parse html instead {!! !!} do --}}
             </div>
             <hr>
             <small>نوشته شده در {{ $post->created_at }}</small>

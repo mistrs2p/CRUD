@@ -20,9 +20,18 @@
     <body>
         @include('inc.navbar')
         <div class="container mt-5">
+            @include('inc.messages')
             @yield('content')
         </div>
     </body>
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    <script>
+        // config.contentsLangDirection = 'rtl';
+        // CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace( 'editor1', {
+            contentsLangDirection: 'rtl'
+        } );
+    </script>
 </html>

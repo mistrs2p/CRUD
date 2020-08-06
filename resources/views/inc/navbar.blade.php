@@ -27,6 +27,9 @@
         </div>
       </li>
     </ul>
+    <ul class="nav navbar-nav justify-content-center">
+      <li class="nav-item"><a href="/posts/create" class="nav-link">ایجاد پست</a></li>
+    </ul>
     <form class="form-inline my-2 my-lg-0">
       <div class="form-group">
         <input class="form-control ml-sm-2" type="text" placeholder="جست و جوی موضوع مورد نظر ..." aria-label="Search">

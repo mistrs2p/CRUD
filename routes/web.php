@@ -32,3 +32,7 @@ Route::resource('posts', 'PostsController');
 //     return 123;
 // });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

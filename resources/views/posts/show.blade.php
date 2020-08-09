@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <a href="{{ route('posts.index') }}" class="btn btn-danger">بازگشت</a>
     
     <div class="card mb-3">
         <div class="card-body">
@@ -17,7 +18,6 @@
         </div>
     </div>
 
-    <a href="{{ route('posts.index') }}" class="btn btn-danger">بازگشت</a>
     <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-danger">ویرایش</a>
 
 @endsection

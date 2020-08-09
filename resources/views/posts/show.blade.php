@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <a href="{{ route('posts.index') }}" class="btn btn-danger">بازگشت</a>
+    <a href="{{ route('posts.index') }}" class="btn btn-primary">بازگشت</a>
     
-    <div class="card mb-3">
+    <div class="card my-3">
         <div class="card-body">
             <div class="card-title">
                 <h3>{{ $post->title }}</h3>
@@ -18,6 +18,11 @@
         </div>
     </div>
 
-    <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-danger">ویرایش</a>
+    <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-secondary">ویرایش</a>
+    <form action="{{ action('PostsController@destroy', ['post' => $post]) }}" method="POST" class="float-left">
+        @csrf
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger" value="حذف">       
+    </form>
 
 @endsection

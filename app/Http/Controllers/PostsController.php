@@ -117,7 +117,7 @@ class PostsController extends Controller
             'body' => $request->body,
         ]);
 
-        return view('posts.show')->with('post', $post);
+        return redirect('/posts')->with('success', 'ویرایش با موفقیت انجام شد');
     }
 
     /**

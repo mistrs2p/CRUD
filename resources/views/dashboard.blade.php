@@ -29,7 +29,9 @@
                                     <td></td>
                                 </tr>
                             @endforeach
-                        </table>    
+                        </table>
+                        @else
+                            شما هیچ پستی ندارید!
                     @endif
                 </div>
             </div>

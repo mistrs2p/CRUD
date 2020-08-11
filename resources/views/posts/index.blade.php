@@ -10,7 +10,7 @@
                     <div class="card-title">
                         <h3><a href="/posts/{{$post->id}}">{{ $post->title }}</a></h3>
                     </div>
-                    <small>نوشته شده در {{ $post->created_at }}</small>
+                   <small>نوشته شده در {{ $post->created_at }} توسط {{ $post->user->name }}</small>
                 </div>
             </div>
         @endforeach

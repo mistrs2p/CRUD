@@ -14,7 +14,7 @@
                 {{-- {{}} dont parse html instead {!! !!} do --}}
             </div>
             <hr>
-            <small>نوشته شده در {{ $post->created_at }}</small>
+            <small>نوشته شده در {{ $post->created_at }} توسط {{ $post->user->name }}</small>
         </div>
     </div>
 

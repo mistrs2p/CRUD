@@ -29,9 +29,6 @@
           <ul class="navbar-nav mr-auto">
 
           </ul>
-          <ul class="nav navbar-nav justify-content-center">
-            
-          </ul>
 
           
           <ul class="navbar-nav">

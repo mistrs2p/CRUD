@@ -26,7 +26,13 @@
                                 <tr>
                                     <td>{{ $post->title }}</td>
                                     <td><a href="/posts/{{ $post->id }}/edit" class="btn btn-secondary">ویرایش</a></td>
-                                    <td></td>
+                                    <td>
+                                        <form action="{{ action('PostsController@destroy', ['post' => $post ]) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="delete">
+                                            <input type="submit" class="btn btn-danger" value="حذف">
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </table>

@@ -15,7 +15,7 @@
                     @endif
 
                     {{ __('خوش آمدید!') }}
-                    <a href="/posts/create">ایجاد پست</a>
+                    <a href="/posts/create" class="btn btn primary">ایجاد پست</a>
                     <h3>پست های وبلاگ شما</h3>
                 </div>
             </div>

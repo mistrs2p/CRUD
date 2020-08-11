@@ -7,6 +7,12 @@
   font-style: normal;
 }
 
+* {
+  font-family: "IRANSansFaNum";
+  direction: rtl;
+  text-align: unset !important;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10933,11 +10939,5 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-
-* {
-  font-family: "IRANSansFaNum";
-  direction: rtl;
-  text-align: unset !important;
 }
 

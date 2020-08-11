@@ -15,6 +15,20 @@
                     @endif
                     <a href="/posts/create" class="btn btn-primary mb-4">ایجاد پست</a>
                     <h3>پست های وبلاگ شما</h3>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>عنوان</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        @foreach ($posts as $post)
+                            <tr>
+                                <td>{{ $post->title }}</td>
+                                <td><a href="/posts/{{ $post->id }}/edit" class="btn btn-warning">ویرایش</a></td>
+                                <td></td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>

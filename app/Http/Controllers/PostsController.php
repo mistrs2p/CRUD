@@ -148,10 +148,36 @@ class PostsController extends Controller
             return response("Not Found!", 404);
         }
 
-        $post->update([
-            'title' => $request->title,
-            'body' => $request->body,
-        ]);
+        if ($request->hasFile('cover_image')) {
+            // Get File Name With The EXT
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+
+            // Get Just File Name
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+            // Get Just Ext
+            $ext = $request->file('cover_image')->getClientOriginalExtension();
+
+            // File Name To Store
+            $fileNameToStore = $fileName . '_' . time() . '.' . $ext;
+
+            // Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
+
+        // $post->update([
+        //     'title' => $request->title,
+        //     'body' => $request->body,
+        //     'cover_image' => $fileNameToStore
+        // ]);
+
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        if ($request->hasFile('cover_image')) {
+            $post->cover_image = $fileNameToStore;
+        }
+        $post->save();
 
         return redirect('/posts')->with('success', 'ویرایش با موفقیت انجام شد');
     }

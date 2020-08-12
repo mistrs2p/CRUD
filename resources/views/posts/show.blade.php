@@ -13,6 +13,9 @@
                 {!! $post->body !!}
                 {{-- {{}} dont parse html instead {!! !!} do --}}
             </div>
+            <div class="card-image">
+                <img src="{{ $post->cover_image }}" alt="">
+            </div>
             <hr>
             <small>نوشته شده در {{ $post->created_at }} توسط {{ $post->user->name }}</small>
         </div>

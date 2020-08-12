@@ -98,7 +98,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
-        $post->cover_image = $request->input('cover_image');
+        $post->cover_image = $fileNameToStore;
         $post->save();
         return redirect('/posts')->with('success', 'پست جدید ایجاد شد.');
     }

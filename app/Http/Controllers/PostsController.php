@@ -198,9 +198,9 @@ class PostsController extends Controller
             return redirect('/posts')->with('error', 'صفحه غیر قابل دسترسی است. لطفا وارد شوید یا ثبت نام کنید!');
         }
 
-        if ($post->cover_image != 'moimage.jpg') {
+        if ($post->cover_image != 'noimage.jpg') {
             // Delete image
-
+            Storage::delete('/public/cover_images/' . $post->cover_image);
         }
         $post->delete();
         return redirect('/posts')->with('success', 'حذف با موفقیت انجام شد');

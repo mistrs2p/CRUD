@@ -101,7 +101,11 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        return view('posts.edit')->with('post', Post::find($id));
+        $post = Post::find($id);
+        if (auth()->user()->id != $post->user_id) {
+            return redirect('/posts')->with('error', 'صفحه غیر قابل دسترسی است. لطفا وارد شوید یا ثبت نام کنید!');
+        }
+        return view('posts.edit')->with('post', $post);
     }
 
     /**

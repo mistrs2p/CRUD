@@ -18,12 +18,14 @@
         </div>
     </div>
     @if (!Auth::guest())
-        <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-secondary">ویرایش</a>
-        <form action="{{ action('PostsController@destroy', ['post' => $post]) }}" method="POST" class="float-left">
-            @csrf
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" class="btn btn-danger" value="حذف">       
-        </form>
+        @if (Auth::user()->id == $post->user_id)
+            <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-secondary">ویرایش</a>
+            <form action="{{ action('PostsController@destroy', ['post' => $post]) }}" method="POST" class="float-left">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" class="btn btn-danger" value="حذف">       
+            </form>
+        @endif
     @endif
     
 @endsection

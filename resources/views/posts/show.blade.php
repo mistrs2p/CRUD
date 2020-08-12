@@ -17,12 +17,13 @@
             <small>نوشته شده در {{ $post->created_at }} توسط {{ $post->user->name }}</small>
         </div>
     </div>
-
-    <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-secondary">ویرایش</a>
-    <form action="{{ action('PostsController@destroy', ['post' => $post]) }}" method="POST" class="float-left">
-        @csrf
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" class="btn btn-danger" value="حذف">       
-    </form>
-
+    @if (!Auth::guest())
+        <a href="{{ route('posts.edit', ['post' => $post]) }}" class="btn btn-secondary">ویرایش</a>
+        <form action="{{ action('PostsController@destroy', ['post' => $post]) }}" method="POST" class="float-left">
+            @csrf
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-danger" value="حذف">       
+        </form>
+    @endif
+    
 @endsection

@@ -102,9 +102,12 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+
+        //check for correct user
         if (auth()->user()->id != $post->user_id) {
             return redirect('/posts')->with('error', 'صفحه غیر قابل دسترسی است. لطفا وارد شوید یا ثبت نام کنید!');
         }
+
         return view('posts.edit')->with('post', $post);
     }
 
@@ -139,6 +142,12 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        
+        //check for correct user
+        if (auth()->user()->id != $post->user_id) {
+            return redirect('/posts')->with('error', 'صفحه غیر قابل دسترسی است. لطفا وارد شوید یا ثبت نام کنید!');
+        }
+
         $post->delete();
         return redirect('/posts')->with('success', 'حذف با موفقیت انجام شد');
     }

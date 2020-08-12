@@ -69,13 +69,31 @@ class PostsController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        // Handle File Upload
+        if ($request->hasFile('cover_image')) {
+            // Get File Name With The EXT
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalImage();
+
+            // Get Just File Name
+            $fileName = pathinfo($fileNameWithExt), PATHINFO_FILENAME;
+
+            // Get Just Ext
+            $ext = $request->file('cover_image')->getClientOriginalExtension();
+
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
         // Create post
         $post = new Post();
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
+        $post->cover_image = $request->input('cover_image');
         $post->save();
         return redirect('/posts')->with('success', 'پست جدید ایجاد شد.');
     }

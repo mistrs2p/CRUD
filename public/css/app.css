@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+@font-face {
+  font-family: "IRANSansFaNum";
+  src: url(/fonts/IRANSansFaNum-Light.eot?374336b0e71ae77d19f08a751494c20d);
+  src: url(/fonts/IRANSansFaNum-Light.eot?374336b0e71ae77d19f08a751494c20d) format("embedded-opentype"), url(/fonts/IRANSansFaNum-Light.woff2?f0c0ca6035ad20cabf7ee4b6a10f2bb5) format("woff2"), url(/fonts/IRANSansFaNum-Light.woff?a586372ea04f7b3b15e522c48a463ea7) format("woff"), url(/fonts/IRANSansFaNum-Light.ttf?5ad0167ac489af4495eb9ed1257e818b) format("truetype"), url(/fonts/IRANSansFaNum-Light.svg?c1801a5e8d39598a00750dda602fcf1c) format("svg");
+  font-style: normal;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10926,5 +10933,11 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+* {
+  font-family: "IRANSansFaNum";
+  direction: rtl;
+  text-align: unset !important;
 }
 

@@ -17,6 +17,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
+Route::resource('posts', 'PostsController');
 
 
 // Route::get('/', function () {
@@ -31,3 +32,7 @@ Route::get('/services', 'PagesController@services');
 //     return 123;
 // });
 
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
